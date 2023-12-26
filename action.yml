@@ -1,5 +1,5 @@
-name: 'Codecrafters Submission Test'
-description: 'Performs codecrafters test on project in current directory'
+name: 'Codecrafters Test'
+description: 'Run codecrafters tests on your code from github'
 inputs:
   remote-url:
     description: 'The git remote URL used to push code on codecrafters'
