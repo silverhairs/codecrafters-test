@@ -14,7 +14,7 @@ Before using this GitHub Action, ensure you have:
 ## Inputs
 
 - `remote-url`: The git remote URL you get when you kick start a new challenge on [CodeCrafters.io](https://codecrafters.io/).
-  It's preferable to keep this in a [secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+  It's recommended to keep this in a [secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 ## Usage
 
