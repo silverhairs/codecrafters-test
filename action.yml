@@ -1,0 +1,30 @@
+name: 'Codecrafters Submission Test'
+description: 'Performs codecrafters test on project in current directory'
+inputs:
+  remote-url:
+    description: 'The git remote URL used to push code on codecrafters'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        # Save the original remote URL
+        ORIGINAL_REMOTE=$(git remote get-url origin)
+        echo "Original remote: $ORIGINAL_REMOTE"
+
+        curl https://codecrafters.io/install.sh | sh
+
+        # Setting up git
+        git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+        git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+        git fetch --unshallow origin
+        git remote rm origin
+        git remote add origin ${{ inputs.remote-url }}
+
+        # Run tests
+        codecrafters test
+
+        # Restore the original remote URL
+        git remote rm origin
+        git remote add origin $ORIGINAL_REMOTE
+      shell: bash
