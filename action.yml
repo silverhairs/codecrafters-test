@@ -1,5 +1,8 @@
 name: 'Codecrafters Test'
 description: 'Run codecrafters tests on your code from github'
+branding:
+  icon: 'check-square'
+  color: 'purple'
 inputs:
   remote-url:
     description: 'The git remote URL used to push code on codecrafters'
