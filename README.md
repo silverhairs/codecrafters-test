@@ -34,7 +34,7 @@ Here's how to integrate the this action into your GitHub workflow:
        steps:
          - uses: actions/checkout@v2
          - name: Run Codecrafters Test
-           uses: actions/codecrafters-test@v1
+           uses: silverhairs/codecrafters-test@v1
            with:
              remote-url: ${{ secrets.CODECRAFTERS_REMOTE }} # Replace with your remote URL
    ```
